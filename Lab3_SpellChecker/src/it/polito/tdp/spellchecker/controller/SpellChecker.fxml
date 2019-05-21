@@ -1,7 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+   <top>
+      <Label text="Lab3_ SpellChecker" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="3.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label text=" Choose the language :  ">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtParole">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="2.0" right="2.0" />
+               </padding>
+            </TextArea>
+            <Button fx:id="btnSpell" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="400.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelWrong" text="Wrong words :  ">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="txtSbagliate">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </TextArea>
+                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#doClearText" prefHeight="25.0" prefWidth="77.0" text="Clear Text">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="400.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
